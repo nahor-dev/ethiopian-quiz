@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EthioQuiz</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/style2.css" />
+  </head>
+  <body>
+    <div class="first-page ">
+      <!-- NAV -->
+      <div class="nav">
+        <div class="logo">EthioQuiz</div>
+        <div class="nav-links">
+          <a href="#">home</a>
+          <a href="#">Login</a>
+          <div class="btn"><a href="index.html">🎮 Start quiz</a></div>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <section class="hero">
+        <br />
+        <br />
+        <h1>
+          Discover Ethiopia <br />like never before with <br />
+          <span class="learning"> EthioQuiz</span><br />
+        </h1>
+        <p>
+          AI-powered quizzes on Ethiopian history, culture, geography, and more
+          — learn faster, smarter, and in a fun way.
+        </p>
+        <div class="btn"><a href="index.html">🎮 Start quiz</a></div>
+      </section>
+
+      <!-- CARD SECTION -->
+      <section class="section">
+        <div class="card">
+          <h2>The smartest way to explore Ethiopia</h2>
+          <div class="btn"><a href="index.html">🎮 Start quiz</a></div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-container">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="#">Flashcard Maker</a>
+            <a href="#">Quizlet</a>
+            <a href="#">YouTube Summarizer</a>
+            <a href="#">PDF Summarizer</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#">Blog</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Social</h4>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Discord</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    
+    <script>
+      const starsContainer = document.querySelector(".stars");
+
+      // create stars
+      for (let i = 0; i < 200; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+
+        starsContainer.appendChild(star);
+      }
+
+      // mouse move effect
+      document.addEventListener("mousemove", (e) => {
+        const stars = document.querySelectorAll(".star");
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = e.clientY / window.innerHeight - 0.5;
+
+        stars.forEach((star, index) => {
+          const speed = (index % 5) + 1;
+          star.style.transform = `translate(${x * speed * 10}px, ${y * speed * 10}px)`;
+        });
+      });
+
+      // Wave text effect for each letter in .learning
+      const learningText = document.querySelector(".learning");
+      if (learningText) {
+        const text = learningText.textContent.trim();
+        learningText.textContent = "";
+
+        [...text].forEach((char, index) => {
+          const span = document.createElement("span");
+          span.textContent = char;
+          span.style.animationDelay = `${index * 0.08}s`;
+          learningText.appendChild(span);
+        });
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
